@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aplikasi Kasir - Warung Bude</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Warung Bude</h1>
+  </header>
+
+  <main class="container">
+    <!-- Kiri: Menu -->
+    <section class="left">
+      <div class="card">
+        <h2>Menu Makanan</h2>
+        <table class="menu-table" id="table-makanan">
+          <thead>
+            <tr>
+              <th>Nama Makanan</th>
+              <th>Harga (Rp)</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Diisi via JS -->
+          </tbody>
+        </table>
+        <button class="btn btn-primary" id="btn-tambah-makanan">Tambahkan Makanan (pilih baris)</button>
+      </div>
+
+      <div class="card">
+        <h2>Menu Minuman</h2>
+        <table class="menu-table" id="table-minuman">
+          <thead>
+            <tr>
+              <th>Nama Minuman</th>
+              <th>Harga (Rp)</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Diisi via JS -->
+          </tbody>
+        </table>
+        <button class="btn btn-primary" id="btn-tambah-minuman">Tambahkan Minuman (pilih baris)</button>
+      </div>
+    </section>
+
+    <!-- Kanan: Keranjang & Pembayaran -->
+    <section class="right card">
+      <h2>Keranjang & Pembayaran</h2>
+
+      <ul class="listbox" id="list-keranjang">
+        <!-- Item keranjang -->
+      </ul>
+
+      <div class="total-row">
+        <span class="total-label">Total:</span>
+        <span class="total-value" id="lbl-total">Rp0</span>
+      </div>
+
+      <button class="btn btn-danger" id="btn-hapus">Hapus Item Terpilih</button>
+
+      <div class="form-row">
+        <label for="input-uang">Uang Diberikan (Rp):</label>
+        <input type="number" id="input-uang" placeholder="0" />
+      </div>
+
+      <button class="btn btn-success" id="btn-struk">Tampilkan Struk</button>
+      <button class="btn btn-secondary" id="btn-simpan">Simpan Struk (.txt)</button>
+    </section>
+  </main>
+
+  <!-- Modal Struk -->
+  <div class="modal" id="modal-struk" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Struk Belanja</h3>
+        <button class="modal-close" id="modal-close">&times;</button>
+      </div>
+      <pre class="modal-body" id="struk-text"></pre>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="modal-ok">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
